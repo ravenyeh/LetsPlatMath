@@ -64,7 +64,7 @@ export default function QuizCard({
               key={choice}
               onClick={() => selectedAnswer === null && onAnswer(choice)}
               disabled={selectedAnswer !== null}
-              className={`${btnClass} rounded-xl p-4 text-2xl font-bold transition-all duration-200 active:scale-95`}
+              className={`${btnClass} rounded-xl p-4 text-2xl font-bold transition-transform duration-200 active:scale-95`}
             >
               {choice}
             </button>
