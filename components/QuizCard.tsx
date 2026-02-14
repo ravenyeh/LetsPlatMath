@@ -47,7 +47,7 @@ export default function QuizCard({
       {/* Choices */}
       <div className="grid grid-cols-2 gap-3">
         {choices.map((choice) => {
-          let btnClass = 'bg-white hover:bg-blue-50 border-2 border-gray-200 hover:border-blue-400 text-gray-800';
+          let btnClass = 'bg-white hover:bg-gray-50 border-2 border-gray-200 text-gray-800';
 
           if (selectedAnswer !== null) {
             if (choice === question.answer) {
@@ -61,7 +61,7 @@ export default function QuizCard({
 
           return (
             <button
-              key={choice}
+              key={`${question.id}-${choice}`}
               onClick={() => selectedAnswer === null && onAnswer(choice)}
               disabled={selectedAnswer !== null}
               className={`${btnClass} rounded-xl p-4 text-2xl font-bold transition-transform duration-200 active:scale-95`}
